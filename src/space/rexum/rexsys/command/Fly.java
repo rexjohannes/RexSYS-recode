@@ -1,0 +1,78 @@
+package space.rexum.rexsys.command;
+
+import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+public class Fly implements CommandExecutor {
+
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+
+        if(!(sender instanceof Player)){
+            if(args.length == 1){
+                final Player target = Bukkit.getPlayer(args[0]);
+                if(target != null){
+                    toggleFly(target);
+                    sender.sendMessage(space.rexum.rexsys.RexSYS.prefix + "§aDer Flugmodus von §e" + target.getName() + " §aist nun auf §e" + target.getAllowFlight() + "§a.");
+                }else{
+                    sender.sendMessage(space.rexum.rexsys.RexSYS.prefix + "§cDer angegebene Spieler ist nicht online.");
+                }
+            }
+            sender.sendMessage(space.rexum.rexsys.RexSYS.prefix + "Usage: /fly <Player>");
+            return false;
+        }
+
+        final Player player = ((Player) sender);
+
+        if(player.hasPermission("rexsys.fly")){
+
+            if(args.length == 0){
+
+                toggleFly(player);
+
+            }else if(args.length == 1){
+
+                if(player.hasPermission("rexsys.fly.other")){
+
+                    final Player target = Bukkit.getPlayer(args[0]);
+
+                    if(target != null){
+
+                        toggleFly(target);
+                        player.sendMessage(space.rexum.rexsys.RexSYS.prefix + "§aDer Flugmodus von §e" + target.getName() + " §aist nun auf §e" + target.getAllowFlight() + "§a.");
+
+                    }else{
+                        player.sendMessage(space.rexum.rexsys.RexSYS.prefix + "§cDer angegebene Spieler ist nicht online.");
+                    }
+
+                }else{
+                    player.sendMessage(space.rexum.rexsys.RexSYS.prefix + "§cDazu hast du keinen Zugiff.");
+                }
+
+            }else{
+                player.sendMessage(space.rexum.rexsys.RexSYS.prefix + "Usage: /fly [Player]");
+            }
+
+        }else{
+            player.sendMessage(space.rexum.rexsys.RexSYS.prefix + "§cDazu hast du keinen Zugriff.");
+        }
+
+
+        return false;
+    }
+
+    private void toggleFly(final Player player){
+
+        if(player.getAllowFlight()){
+            player.setAllowFlight(false);
+            player.sendMessage(space.rexum.rexsys.RexSYS.prefix + "§cDu kannst nun nicht mehr Fliegen.");
+        }else{
+            player.setAllowFlight(true);
+            player.sendMessage(space.rexum.rexsys.RexSYS.prefix + "§aDu kannst nun Fliegen.");
+        }
+
+    }
+
+}

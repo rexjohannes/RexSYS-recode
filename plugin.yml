@@ -6,4 +6,13 @@ api-version: 1.13
 commands:
   kick:
   clearchat:
+  rex:
+  fly:
+  top:
+  tp:
+  heal:
+  feed:
+  gm:
+  msg:
+  rtp:
   

@@ -25,7 +25,7 @@ public class ClearChat
                     player.sendMessage(space.rexum.rexsys.RexSYS.prefix + "Usage: /clearchat [Zeilen]");
                 }
             } else {
-                sender.sendMessage(space.rexum.rexsys.RexSYS.prefix + "§cDazu hast du keinen Zugiff.");
+                sender.sendMessage(space.rexum.rexsys.RexSYS.prefix + "§cDazu hast du keinen Zugriff.");
             }
         } else {
             sender.sendMessage(space.rexum.rexsys.RexSYS.prefix + "Du musst ein Spieler sein.");

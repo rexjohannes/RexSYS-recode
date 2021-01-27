@@ -10,4 +10,6 @@ Perms: https://github.com/rexjohannes/RexSYS-recode/wiki/Perms
 
 Java: https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=hotspot
 
+Debian & Ubuntu Installer: https://git.io/JtC6a
+
 <a href="https://zap-hosting.com/rexsys"><img src="https://zap-hosting.com/interface/download/images.php?type=affiliate&id=65869" alt="ZAP-Hosting Gameserver and Webhosting"></a>

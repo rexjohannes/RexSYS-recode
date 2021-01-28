@@ -1,6 +1,6 @@
 # RexSYS-recode
 
-Download: https://github.com/rexjohannes/RexSYS-recode/releases
+Download: https://git.io/JtW9b
 
 SpigotMC: https://www.spigotmc.org/resources/rexsys.88342/
 
